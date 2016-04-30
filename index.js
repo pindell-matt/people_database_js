@@ -23,6 +23,9 @@ class PeopleDatabase {
   }
 }
 
-const people = new PeopleDatabase()
+const database = new PeopleDatabase()
 const fakePerson = new Person("Matt", "Pindell", "fake@gmail.com", "CO")
 fakePerson.hello
+
+database.add(fakePerson)
+console.log(database.people)
