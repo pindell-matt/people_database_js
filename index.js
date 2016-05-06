@@ -32,4 +32,18 @@ class PeopleDatabase {
     _.map(this.people, el => { if (el.state === state) validStates.push(el)})
     return validStates
   }
+
+  countByState(state) {
+    // TODO
+  }
 }
+
+const db = new PeopleDatabase
+const personOne = new Person("Matt", "Pindell", "fake@gmail.com", "CO")
+const personTwo = new Person("Matt", "Faker", "fake1@gmail.com", "CO")
+const personThree = new Person("Matt", "Fakest", "fake2@gmail.com", "DC")
+
+db.add(personOne)
+db.add(personTwo)
+db.add(personThree)
+console.log(db.countByState("CO"));
