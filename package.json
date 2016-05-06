@@ -1,0 +1,25 @@
+{
+  "name": "people_database_js",
+  "version": "1.0.0",
+  "description": "Practice with ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pindell-matt/people_database_js.git"
+  },
+  "keywords": [
+    "lol"
+  ],
+  "author": "mpindell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pindell-matt/people_database_js/issues"
+  },
+  "homepage": "https://github.com/pindell-matt/people_database_js#readme",
+  "dependencies": {
+    "lodash": "^4.11.2"
+  }
+}
