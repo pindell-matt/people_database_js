@@ -24,17 +24,19 @@ class PeopleDatabase {
   }
 
   removeByEmail(email) {
-    _.remove(this.people, el => { return el.email === email })
+    _.remove(this.people, person => { return person.email === email })
   }
 
   allByState(state) {
     let validStates = []
-    _.map(this.people, el => { if (el.state === state) validStates.push(el)})
+    _.map(this.people, person => { if (person.state === state) validStates.push(person)})
     return validStates
   }
 
   countByState(state) {
-    // TODO
+    let validPeople = []
+    _.map(this.people, person => { if (person.state == state) validPeople.push(person)})
+    return validPeople.length
   }
 }
 
@@ -47,3 +49,7 @@ db.add(personOne)
 db.add(personTwo)
 db.add(personThree)
 console.log(db.countByState("CO"));
+
+console.log(db)
+db.removeByEmail("fake@gmail.com")
+console.log(db)
