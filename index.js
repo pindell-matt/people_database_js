@@ -30,26 +30,30 @@ class PeopleDatabase {
   allByState(state) {
     let validStates = []
     _.map(this.people, person => { if (person.state === state) validStates.push(person)})
-    return validStates
+    console.log(validStates)
   }
 
   countByState(state) {
     let validPeople = []
     _.map(this.people, person => { if (person.state == state) validPeople.push(person)})
-    return validPeople.length
+    console.log(validPeople.length)
+  }
+
+  printAllEmails() {
+    let emails = this.people.map(person => { return person.email }).join(", ")
+    console.log(emails)
   }
 }
 
 const db = new PeopleDatabase
-const personOne = new Person("Matt", "Pindell", "fake@gmail.com", "CO")
-const personTwo = new Person("Matt", "Faker", "fake1@gmail.com", "CO")
-const personThree = new Person("Matt", "Fakest", "fake2@gmail.com", "DC")
+const personOne = new Person("Matt", "Fake", "one@gmail.com", "CO")
+const personTwo = new Person("Matt", "Faker", "two@gmail.com", "CO")
+const personThree = new Person("Matt", "Fakest", "three@gmail.com", "DC")
 
 db.add(personOne)
 db.add(personTwo)
 db.add(personThree)
-console.log(db.countByState("CO"));
 
-console.log(db)
-db.removeByEmail("fake@gmail.com")
-console.log(db)
+db.allByState("CO")
+db.countByState("CO")
+db.printAllEmails()
